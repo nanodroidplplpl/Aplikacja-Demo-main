@@ -1,0 +1,4 @@
+numpy
+paho-mqtt>=2.0
+pyqtgraph
+PyQt6

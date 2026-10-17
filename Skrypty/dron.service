@@ -1,0 +1,15 @@
+# Wzorzec usługi systemd. instaluj-rpi.sh wpisuje UZYTKOWNIK i SKRYPT i kopiuje
+# plik do /etc/systemd/system/dron.service.
+[Unit]
+Description=Dron - monitoring widma i DOA (Pluto -> MQTT)
+After=network-online.target zerotier-one.service
+Wants=network-online.target
+
+[Service]
+User=UZYTKOWNIK
+ExecStart=/bin/bash "SKRYPT"
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
